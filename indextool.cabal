@@ -1,0 +1,35 @@
+name:                indextool
+version:             0.1.0.0
+synopsis:            Random non-production tools based on haskell-indexer.
+homepage:            https://github.com/googel/haskell-indexer
+license:             Apache-2.0
+license-file:        LICENSE
+author:              Robin Palotai
+maintainer:          palotai.robin@gmail.com
+copyright:           Robin Palotai
+category:            Language
+build-type:          Simple
+extra-source-files:  README.md
+stability:           experimental
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+                     , aeson
+                     , unordered-containers
+                     , cayley-client
+                     , neat-interpolation
+                     , text
+                     , vector
+  default-language:    Haskell2010
+
+executable indextool-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       base
+                     , indextool
+                     , text
+  default-language:    Haskell2010
+
